@@ -14,7 +14,7 @@ jobs:
       - name: 'Step-2'
         run: |
           echo 'Date is:- '
-          echo ${{steps.date}}
+          echo $NOW
   
   job2:
     name: 'job-2'
