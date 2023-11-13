@@ -5,7 +5,7 @@ on:
       - main
 
 jobs:
-  job1:
+  ubuntu:
     name: 'Job-1'
     runs-on: ubuntu-latest
     steps:
@@ -14,9 +14,9 @@ jobs:
       - name: 'Step-2'
         run: |
           echo 'Date is:- '
-          echo $NOW
+          date
   
-  job2:
+  windows:
     name: 'job-2'
     runs-on: windows-latest
     steps:
@@ -25,8 +25,9 @@ jobs:
       - name: 'Step-2'
         run: |
           echo 'date is -'
+          date
   
-  job3:
+  macos:
     name: 'job-3'
     runs-on: macos-latest
     steps:
@@ -35,10 +36,10 @@ jobs:
       - name: 'Step-2'
         run: |
           echo ' date is- '
-          $date
+          date
   
   job4:
-    needs: [job1,job2,job3]
+    needs: [windows,macos,ubuntu]
     name: 'Job-4'
     runs-on: windows-latest
     steps:
@@ -47,4 +48,4 @@ jobs:
       - name: 'Step-2'
         run: |
           echo 'Date is:- '
-          $date
+          date
