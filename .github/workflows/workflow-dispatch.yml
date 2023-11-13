@@ -13,5 +13,5 @@ jobs:
     steps:
       - name: 'Cleanup repo'
         run: |
-         cd C:\Tempo
+         cd 'C:\Program Files'
          rm -rf ${{inputs.repo-name}}
