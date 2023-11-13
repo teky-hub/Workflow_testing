@@ -2,8 +2,16 @@ name: workflow-dispatch
 on:
   workflow_dispatch:
     inputs:
-      File-input:
-        description: Input File Name
+      repo-name:
+        description: 'Input File Name'
         required: true
-        default: test.csv
-    
+        default: 'test.csv'
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Cleanup repo'
+        run: |
+         cd C:\Tempo
+         rm -rf ${{inputs.repo-name}}
