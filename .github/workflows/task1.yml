@@ -25,7 +25,7 @@ jobs:
       - name: 'Step-2'
         run: |
           echo 'date is -'
-          ${{Step-2.date}}
+          ${{job1.date}}
   
   job3:
     name: 'job-3'
