@@ -1,0 +1,9 @@
+name: workflow-dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      File-input:
+        description: Input File Name
+        required: true
+        default: test.csv
+    
