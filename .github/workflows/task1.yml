@@ -12,7 +12,9 @@ jobs:
       - name: 'Step-1'
         uses: actions/checkout@v4
       - name: 'Step-2'
-        run: $date
+        run: |
+          echo 'Date is:- '
+          $date
   
   job2:
     name: 'job-2'
@@ -21,7 +23,9 @@ jobs:
       - name: 'Step-1'
         uses: actions/checkout@v4
       - name: 'Step-2'
-        run: $date
+        run: |
+          echo 'date is -'
+          $date
   
   job3:
     name: 'job-3'
@@ -30,14 +34,18 @@ jobs:
       - name: 'Step-1'
         uses: actions/checkout@v4
       - name: 'Step-2'
-        run: $date
+        run: |
+          echo ' date is- '
+          $date
   
   job4:
     needs: [job1,job2,job3]
     name: 'Job-4'
-    runs-on: window-latest
+    runs-on: windows-latest
     steps:
       - name: 'Step-1'
         uses: actions/checkout@v4
       - name: 'Step-2'
-        run: $date
+        run: |
+          echo 'Date is:- '
+          $date
