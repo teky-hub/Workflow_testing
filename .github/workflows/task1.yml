@@ -12,16 +12,16 @@ jobs:
       - name: 'Step-1'
         uses: actions/checkout@v4
       - name: 'Step-2'
-        run: echo %DATE_TODAY%
+        run: $date
   
   job2:
     name: 'job-2'
-    runs-on: window-latest
+    runs-on: windows-latest
     steps:
       - name: 'Step-1'
         uses: actions/checkout@v4
       - name: 'Step-2'
-        run: echo %DATE_TODAY%
+        run: $date
   
   job3:
     name: 'job-3'
@@ -30,7 +30,7 @@ jobs:
       - name: 'Step-1'
         uses: actions/checkout@v4
       - name: 'Step-2'
-        run: echo %DATE_TODAY%
+        run: $date
   
   job4:
     needs: [job1,job2,job3]
@@ -40,4 +40,4 @@ jobs:
       - name: 'Step-1'
         uses: actions/checkout@v4
       - name: 'Step-2'
-        run: echo %DATE_TODAY%
+        run: $date
