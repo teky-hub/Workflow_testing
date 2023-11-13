@@ -1,0 +1,43 @@
+name: task1
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job1:
+    name: 'Job-1'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Step-1'
+        uses: actions/checkout@v4
+      - name: 'Step-2'
+        run: echo %DATE_TODAY%
+  
+  job2:
+    name: 'job-2'
+    runs-on: window-latest
+    steps:
+      - name: 'Step-1'
+        uses: actions/checkout@v4
+      - name: 'Step-2'
+        run: echo %DATE_TODAY%
+  
+  job3:
+    name: 'job-3'
+    runs-on: macos-latest
+    steps:
+      - name: 'Step-1'
+        uses: actions/checkout@v4
+      - name: 'Step-2'
+        run: echo %DATE_TODAY%
+  
+  job4:
+    needs: [job1,job2,job3]
+    name: 'Job-4'
+    runs-on: window-latest
+    steps:
+      - name: 'Step-1'
+        uses: actions/checkout@v4
+      - name: 'Step-2'
+        run: echo %DATE_TODAY%
